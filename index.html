@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sattumakhana | Healthy Makhana & Sattu Online</title>
+    <meta
+      name="description"
+      content="Order roasted makhana, sattu drink mix, and healthy snack combos from Sattumakhana."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Sattumakhana home">
+        <span class="brand-mark">S</span>
+        <span>Sattumakhana</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#products">Products</a>
+        <a href="#why-us">Why us</a>
+        <a href="#checkout">Order</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <img
+          class="hero-image"
+          src="assets/sattumakhana-hero.png"
+          alt="Bowls of roasted makhana and sattu ingredients"
+        />
+        <div class="hero-content">
+          <p class="eyebrow">Fresh from our offline store to your doorstep</p>
+          <h1>Sattumakhana</h1>
+          <p>
+            Clean, crunchy makhana and nourishing sattu mixes for everyday
+            snacking, family packs, and office cravings.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#products">Shop products</a>
+            <a class="button secondary" href="#checkout">Place order</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Store highlights">
+        <div>
+          <strong>Roasted fresh</strong>
+          <span>Small batches for better crunch</span>
+        </div>
+        <div>
+          <strong>Online ordering</strong>
+          <span>Cart, address, and payment options</span>
+        </div>
+        <div>
+          <strong>Local delivery</strong>
+          <span>Ready for city-wide fulfilment</span>
+        </div>
+      </section>
+
+      <section class="section intro" id="why-us">
+        <div>
+          <p class="eyebrow">Built on trust</p>
+          <h2>Original taste from Bihar, now online.</h2>
+        </div>
+        <p>
+          Sattumakhana brings the real taste of Bihar to your home with fresh
+          makhana and sattu products made for everyday healthy snacking. After
+          serving customers offline, we are now making it easier to order the
+          same original flavour online with doorstep delivery and simple payment
+          options.
+        </p>
+      </section>
+
+      <section class="section product-gallery" aria-labelledby="galleryTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Real products</p>
+            <h2 id="galleryTitle">Packed fresh for your order</h2>
+          </div>
+          <p>
+            See the actual Sattumakhana packs customers receive, with makhana,
+            sattu, and Bihar special items ready for delivery.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-feature">
+            <img src="assets/sattumakhana-pack-1.jpeg" alt="Sattumakhana makhana packet with label" />
+            <figcaption>Makhana pack</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/sattumakhana-pack-2.jpeg" alt="Close view of Sattumakhana makhana packaging" />
+            <figcaption>Fresh roasted makhana</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/sattumakhana-sattu-pack.jpeg" alt="Sattumakhana sattu packet with label" />
+            <figcaption>Sattu pack</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/sattumakhana-pack-3.jpeg" alt="Sattumakhana makhana packet front view" />
+            <figcaption>Bihar ka swaad</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="products">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Shop</p>
+            <h2>Popular products</h2>
+          </div>
+          <a class="text-link" href="#checkout">View cart</a>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="checkout-section" id="checkout">
+        <div class="checkout-copy">
+          <p class="eyebrow">Checkout</p>
+          <h2>Place your order</h2>
+          <p>
+            Add your details and choose how you want to pay. For real online
+            payments, add your Razorpay key in <code>app.js</code> and connect
+            backend payment verification before launch.
+          </p>
+        </div>
+
+        <div class="checkout-layout">
+          <aside class="cart-panel" aria-label="Cart summary">
+            <div class="panel-heading">
+              <h3>Your cart</h3>
+              <button class="icon-button" id="clearCart" type="button" title="Clear cart" aria-label="Clear cart">
+                x
+              </button>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="totals">
+              <div>
+                <span>Subtotal</span>
+                <strong id="subtotal">Rs 0</strong>
+              </div>
+              <div>
+                <span>Delivery</span>
+                <strong id="delivery">Rs 0</strong>
+              </div>
+              <div class="grand-total">
+                <span>Total</span>
+                <strong id="grandTotal">Rs 0</strong>
+              </div>
+            </div>
+          </aside>
+
+          <form class="order-form" id="orderForm">
+            <div class="form-grid">
+              <label>
+                Full name
+                <input name="name" autocomplete="name" required />
+              </label>
+              <label>
+                Mobile number
+                <input name="phone" autocomplete="tel" inputmode="tel" required />
+              </label>
+              <label class="wide">
+                Delivery address
+                <textarea name="address" rows="3" required></textarea>
+              </label>
+              <label>
+                City
+                <input name="city" autocomplete="address-level2" required />
+              </label>
+              <label>
+                PIN code
+                <input name="pincode" inputmode="numeric" autocomplete="postal-code" required />
+              </label>
+            </div>
+
+            <fieldset>
+              <legend>Payment method</legend>
+              <label class="radio-row">
+                <input type="radio" name="payment" value="razorpay" checked />
+                <span>Online payment</span>
+              </label>
+              <label class="radio-row">
+                <input type="radio" name="payment" value="upi" />
+                <span>UPI after confirmation</span>
+              </label>
+              <label class="radio-row">
+                <input type="radio" name="payment" value="cod" />
+                <span>Cash on delivery</span>
+              </label>
+            </fieldset>
+
+            <button class="button primary full-width" type="submit">Confirm order</button>
+            <p class="form-note" id="orderMessage" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="contact-band">
+        <div>
+          <h2>Need bulk or monthly orders?</h2>
+          <p>Use the same checkout form and mention your quantity in the address field.</p>
+        </div>
+        <a class="button secondary" href="tel:+918292294887">Call store</a>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Sattumakhana</span>
+      <span>Healthy makhana and sattu snacks</span>
+    </footer>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
